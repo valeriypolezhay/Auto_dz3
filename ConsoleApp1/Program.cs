@@ -16,24 +16,8 @@ namespace QA_task3
         readonly string subj = @"QA_Hometask";
         readonly string letter = @"Text for assert777";
 
-        //[SetUp]
-        //public void startBrowser()
-        //{
-        //    driver = new ChromeDriver
-        //    {
-        //        Url = @"https://mail.google.com"
-        //    };
-
-        //}
-
-
-        //HomeGmail homeGmail;
-
-        //LoginPage loginPage;//=new LoginPage(driver);
-
-
         [Test]
-        public void LoginTest()
+        public void LoginAndSendTest()
         {
             IWebDriver driver = new ChromeDriver();
             driver.Navigate().GoToUrl(@"https://mail.google.com");
@@ -43,9 +27,9 @@ namespace QA_task3
             login.TypePassword(correctEmailPassword);
 
             NewLetterPage newLetter = new NewLetterPage(driver);
-            newLetter.SendNewMessage(targetEmail,subj ,letter );
+            newLetter.SendNewMessage(targetEmail, subj, letter);
 
-           
+
         }
 
         [Test]

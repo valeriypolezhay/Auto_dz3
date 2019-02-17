@@ -13,8 +13,21 @@ namespace ConsoleApp1.PageObjects
     class NewLetterPage
     {
         private IWebDriver _driver;
-
+        //work well
         By createNewMessage = By.XPath("//*[@id=':38']/div/div");
+
+
+        //dont work :(
+        //By createNewMessage = By.XPath("//*[@id=':38']/div/div/text('Compose')");
+        //By createNewMessage = By.XPath("//div[@role='button'][11]");
+        //By createNewMessage = By.XPath("//div[contains(text(), 'Compose')]");
+        //By createNewMessage = By.XPath("/html/body/div[7]/div[3]/div/div[2]/div[1]/div[1]/div[1]/div[2]/div/div/div/div[1]/div/div");
+        //By createNewMessage = By.XPath("//div[@class='T-I J-J5-Ji T-I-KE L3']");
+        //By createNewMessage = By.CssSelector(".T-I J-J5-Ji T-I-KE L3");
+        //By createNewMessage = By.ClassName("T-I J-J5-Ji T-I-KE L3");
+
+
+
 
         public NewLetterPage(IWebDriver driver) => _driver = driver;
 
@@ -31,7 +44,7 @@ namespace ConsoleApp1.PageObjects
         private void NewEmail()
         {
             Thread.Sleep(2000);
-          
+
             _driver.FindElement(createNewMessage).Click();
             Thread.Sleep(2000);
         }
